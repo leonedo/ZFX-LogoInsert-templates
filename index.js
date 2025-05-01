@@ -1,4 +1,5 @@
 // version 1.04 template index made by heine.froholdt@gmail.com
+// modificado por leon para logos sin fuentes
 
 let isOn = false;
 let framesMilliseconds;
@@ -40,11 +41,11 @@ const loadAnimation = (data, container) => {
     });
 }
 
-let anim = loadAnimation('data.json', animContainer)
+let anim = loadAnimation(json_file, animContainer)
 let externalLoop;
 
 //add font-face from data.json  
-const addFont = (fam, path) => {
+/* const addFont = (fam, path) => {
     let newFont = document.createElement('style')
     newFont.appendChild(document.createTextNode(`\
     @font-face {\
@@ -53,7 +54,7 @@ const addFont = (fam, path) => {
     }\
     `));
     document.head.appendChild(newFont);
-}
+} */
 
 
 //checking if the animation is ready
@@ -174,7 +175,7 @@ anim.addEventListener('config_ready', function (e) {
     })
 
     //Add fonts to style
-    if (!fontsLoaded) {
+    /* if (!fontsLoaded) {
         let fonts = anim.renderer.data.fonts.list;
         for (const font in fonts) {
             let family = fonts[font].fFamily
@@ -183,7 +184,7 @@ anim.addEventListener('config_ready', function (e) {
                 addFont(family, fontPath)
             }
         }
-    }
+    } */
 
 });
 
@@ -299,6 +300,7 @@ webcg.on('play', function () {
             externalLoop.goToAndPlay('play', true);
         }
         isOn = true;
+        nextAnimation = 'no animation';
     });
 
 });
