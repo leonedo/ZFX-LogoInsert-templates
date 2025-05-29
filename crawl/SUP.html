@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!--  template made by heine froholdt heine.froholdt@gmail.com  -->
+    <meta charset="UTF-8" />
+    <title>Template</title>
+
+    <style>
+
+        #bm {
+            position: fixed;                 
+                
+        }
+
+        #loop {
+            position: fixed;  
+          
+        }
+
+        body {
+            overflow: hidden;
+            margin: 0;
+
+        }
+ /* Wrapper for ticker */
+.ticker-container {
+  position: absolute;
+  width: 66.5%;
+  height: 10%;
+  top: 3.5%;
+  left: 47.1%;
+  transform: translateX(-50%);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  z-index: 10;
+  opacity: 1;
+  transform-origin: left center; /* Important: keeps left side fixed */
+}
+
+/* Inner text that scrolls */
+.ticker-text {
+  font-family: 'UniviaProMedium-Italic', sans-serif;
+  position: absolute;
+  white-space: nowrap;
+  font-size: 2vw;
+  animation: scroll 20s linear infinite;
+  color: rgb(71, 90, 108);
+}
+
+.ticker-container.hidden {
+  transition: width 0.5s ease, opacity 0.5s ease;
+  opacity: 0;
+  width: 20%;
+  pointer-events: none; /* disable interaction when hidden */
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(var(--start-x));
+  }
+  100% {
+    transform: translateX(var(--end-x));
+  }
+}
+    </style>
+</head>
+
+<body>
+    <div id="bm">
+          <div class="ticker-container">
+        <div class="ticker-text" id="tickerText"></div>
+    </div>
+    </div>
+    <div id="loop">
+       
+    </div>
+   
+
+
+
+    <!-- Scripts -->
+    <script>let json_file = "sup.json" </script> 
+    <script src="../webcg-framework.umd.js"></script>
+    <script src="../lottie.js"></script>
+   <script src="cintillo.js"></script>
+    <script src="cintillo_index.js"></script>
+
+</body>
+
+</html>

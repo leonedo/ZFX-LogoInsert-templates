@@ -1,8 +1,8 @@
 const ticker = document.getElementById('tickerText');
 const container = document.querySelector('.ticker-container');
-const scrollSpeed = 180; // pixels per second
+const scrollSpeed = 100; // pixels per second
 // Use either a symbol or an image as the separator
-const separator = `<span style="margin: 0 40px;">👉</span>`;
+const separator = `<span style="margin: 0 20px;">|</span>`;
 // OR for an image:
 // const separator = `<img src="icon.png" style="height: 32px; margin: 0 40px;">`;
 
