@@ -20,7 +20,7 @@ function startTicker(messagesArray) {
     return;
   }
 
-  const concatenated = messagesArray.join(separator) + separator + messagesArray[0];
+  const concatenated = messagesArray.join(separator);
   ticker.innerHTML = concatenated;
 
   requestAnimationFrame(() => {
