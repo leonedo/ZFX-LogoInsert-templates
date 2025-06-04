@@ -16,7 +16,7 @@ let loopExternal = false;
 let loopRepeat;
 let loopDuration = 0;
 let loopTiming;
-
+let myloop = 'loop'
 
 //update
 let updateAnimation = false;
@@ -184,7 +184,7 @@ anim.addEventListener('config_ready', function (e) {
             }
         }
     }
-
+  
 });
 
 const animPromise = makeAnimPromise()
@@ -214,6 +214,13 @@ webcg.on('data', function (data) {
             console.log(resolve)
 
             setTimeout(() => {
+                const date = new Date();
+                const formatted = date.toLocaleDateString('es-419', {
+                    day: '2-digit',
+                    month: '2-digit',
+                    year: 'numeric'
+                });
+                data["t0"] = formatted;
                 for (let i = 0; i < animElementsLength; i++) {
                     var animElement = anim.renderer.elements[i];
                     if (
@@ -279,7 +286,7 @@ anim.addEventListener('complete', () => {
 
     if (loopAnimation && isOn && !loopExternal) {
         loopRepeat = setTimeout(() => {
-            anim.goToAndPlay('loop', true);
+            anim.goToAndPlay(myloop, true);
         }, framesMilliseconds * loopDelay)
 
     } else if (nextAnimation === 'stop' && isOn && !loopExternal) {
@@ -300,6 +307,7 @@ anim.addEventListener('complete', () => {
 
 //casparcg control
 webcg.on('play', function () {
+    myloop = "loop"
     animPromise.then((resolve) => {
         console.log('play')
         anim.goToAndPlay('play', true);
@@ -309,7 +317,20 @@ webcg.on('play', function () {
         isOn = true;
          nextAnimation = 'no animation';
     });
+currentTime();
+});
 
+webcg.on('clima_entrada', function () {
+    console.log('entrada_clima')
+    myloop = "loop_clima"
+    anim.goToAndPlay('clima_entrada', true)
+       
+});
+webcg.on('clima_salida', function () {
+    console.log('clima_salida')
+    myloop = "loop_clima"
+    anim.goToAndPlay('clima_salida', true)
+       
 });
 
 webcg.on('stop', function () {
@@ -317,7 +338,7 @@ webcg.on('stop', function () {
     clearTimeout(loopRepeat);
     loopAnimation = false;
     nextAnimation = 'stop'
-
+myloop = "loop"
     if (anim.isPaused) {
         if (!loopExternal) {
             anim.goToAndPlay('stop', true)
@@ -351,3 +372,41 @@ webcg.on('update', function () {
 
     }
 });
+
+
+const formatter = new Intl.DateTimeFormat('es', {
+    year: "numeric",
+    month: "long",
+    day: "numeric"
+});
+
+function updateTime(unit) {
+    return unit < 10 ? "0" + unit : unit;
+}
+
+function currentTime() {
+    const date = new Date();
+    let hour = date.getHours();
+    let min = updateTime(date.getMinutes());
+    let sec = updateTime(date.getSeconds());
+    const midday = hour >= 12 ? "PM" : "AM";
+    hour = hour % 12 || 12;
+    hour = updateTime(hour);
+
+    const timeString = `${hour}:${min} ${midday}`; //
+
+    const elements = anim.renderer.elements;
+
+    // Replace with your actual class name from the animation
+    const targetClass = "t1"; 
+
+    const target = elements.find(el => el.data?.cl === targetClass);
+
+    if (target) {
+        target.updateDocumentData({ t: timeString }, 0);
+    } else {
+        console.warn(`Text element with class "${targetClass}" not found.`);
+    }
+
+    setTimeout(currentTime, 1000);
+}
