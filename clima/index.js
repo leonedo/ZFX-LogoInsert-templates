@@ -322,14 +322,14 @@ currentTime();
 
 webcg.on('clima_entrada', function () {
     console.log('entrada_clima')
-    myloop = "loop_clima"
     anim.goToAndPlay('clima_entrada', true)
+    myloop = "loop_clima"
        
 });
 webcg.on('clima_salida', function () {
     console.log('clima_salida')
-    myloop = "loop_clima"
     anim.goToAndPlay('clima_salida', true)
+    myloop = "loop"
        
 });
 
@@ -393,14 +393,12 @@ function currentTime() {
     hour = hour % 12 || 12;
     hour = updateTime(hour);
 
-    const timeString = `${hour}:${min} ${midday}`; //
+    const timeString = `${hour}:${min} ${midday}`;
 
     const elements = anim.renderer.elements;
+    const targetClass = "t1";
 
-    // Replace with your actual class name from the animation
-    const targetClass = "t1"; 
-
-    const target = elements.find(el => el.data?.cl === targetClass);
+    const target = elements.find(el => el.data && el.data.cl === targetClass);
 
     if (target) {
         target.updateDocumentData({ t: timeString }, 0);
