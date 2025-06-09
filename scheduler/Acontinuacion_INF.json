@@ -5,7 +5,7 @@
     "op": 661,
     "w": 1920,
     "h": 1080,
-    "nm": "Usted esta viendo INF",
+    "nm": "Acontinuacion INF",
     "ddd": 0,
     "fonts": {
         "list": [
@@ -88,7 +88,7 @@
         },
         {
             "ddd": 0,
-            "ind": 3,
+            "ind": 2,
             "ty": 5,
             "nm": ".t0",
             "cl": "t0",
@@ -192,7 +192,7 @@
                             },
                             "t": 9,
                             "s": [
-                                -492.37,
+                                -408.506,
                                 -100.305,
                                 0
                             ],
@@ -218,7 +218,7 @@
                             },
                             "t": 29,
                             "s": [
-                                -329.732,
+                                -245.869,
                                 -100.305,
                                 0
                             ],
@@ -244,7 +244,7 @@
                             },
                             "t": 633,
                             "s": [
-                                -329.732,
+                                -245.869,
                                 -100.305,
                                 0
                             ],
@@ -262,7 +262,7 @@
                         {
                             "t": 655,
                             "s": [
-                                -15.446,
+                                68.417,
                                 -100.305,
                                 0
                             ]
@@ -298,9 +298,9 @@
                     "k": [
                         {
                             "s": {
-                                "s": 13,
+                                "s": 12,
                                 "f": "UniviaProMedium-Italic",
-                                "t": "USTED ESTÁ VIENDO",
+                                "t": "A CONTINUACIÓN",
                                 "ca": 1,
                                 "j": 2,
                                 "tr": 29,
@@ -338,7 +338,7 @@
         },
         {
             "ddd": 0,
-            "ind": 4,
+            "ind": 3,
             "ty": 5,
             "nm": ".t1",
             "cl": "t1",
@@ -549,10 +549,10 @@
                         {
                             "s": {
                                  "sz": [118, 28],     
-                                 "ps": [-58, -10],
+                                 "ps": [-58, -10],    
                                 "s": 12,
                                 "f": "UniviaProUltra-Italic",
-                                "t": "TELEUNIVERSO\rAL DIA",
+                                "t": "",
                                 "ca": 1,
                                 "j": 2,
                                 "tr": 25,
@@ -592,8 +592,8 @@
             "ddd": 0,
             "ind": 5,
             "ty": 4,
-            "nm": ".Element24",
-            "cl": "Element24",
+            "nm": ".Element16",
+            "cl": "Element16",
             "parent": 14,
             "sr": 1,
             "ks": {
@@ -959,8 +959,8 @@
             "ddd": 0,
             "ind": 6,
             "ty": 4,
-            "nm": ".Element23",
-            "cl": "Element23",
+            "nm": ".Element15",
+            "cl": "Element15",
             "parent": 14,
             "sr": 1,
             "ks": {
@@ -1193,15 +1193,15 @@
                                                         -216.257
                                                     ],
                                                     [
-                                                        -788.237,
-                                                        -218.538
+                                                        -576.358,
+                                                        -217.56
                                                     ],
                                                     [
-                                                        -837.443,
-                                                        -49.114
+                                                        -625.564,
+                                                        -48.137
                                                     ],
                                                     [
-                                                        167.983,
+                                                        167.982,
                                                         -48.17
                                                     ]
                                                 ],
@@ -1349,8 +1349,8 @@
             "ddd": 0,
             "ind": 7,
             "ty": 4,
-            "nm": ".Element22",
-            "cl": "Element22",
+            "nm": ".Element14",
+            "cl": "Element14",
             "parent": 14,
             "sr": 1,
             "ks": {
@@ -1864,8 +1864,8 @@
             "ddd": 0,
             "ind": 8,
             "ty": 4,
-            "nm": ".Element21",
-            "cl": "Element21",
+            "nm": ".Element13",
+            "cl": "Element13",
             "parent": 14,
             "sr": 1,
             "ks": {
@@ -2350,8 +2350,8 @@
             "ddd": 0,
             "ind": 9,
             "ty": 4,
-            "nm": ".Element20",
-            "cl": "Element20",
+            "nm": ".Element12",
+            "cl": "Element12",
             "parent": 14,
             "sr": 1,
             "ks": {
@@ -2733,8 +2733,8 @@
             "ddd": 0,
             "ind": 10,
             "ty": 4,
-            "nm": ".Element19",
-            "cl": "Element19",
+            "nm": ".Element11",
+            "cl": "Element11",
             "parent": 14,
             "sr": 1,
             "ks": {
@@ -3116,8 +3116,8 @@
             "ddd": 0,
             "ind": 11,
             "ty": 4,
-            "nm": ".Element18",
-            "cl": "Element18",
+            "nm": ".Element10",
+            "cl": "Element10",
             "parent": 14,
             "sr": 1,
             "ks": {
@@ -3499,8 +3499,8 @@
             "ddd": 0,
             "ind": 12,
             "ty": 4,
-            "nm": ".Element17",
-            "cl": "Element17",
+            "nm": ".Element9",
+            "cl": "Element9",
             "parent": 14,
             "sr": 1,
             "ks": {
@@ -3882,7 +3882,7 @@
             "ddd": 0,
             "ind": 13,
             "ty": 3,
-            "nm": "Control total 3",
+            "nm": "Control total 2",
             "sr": 1,
             "ks": {
                 "o": {
@@ -3936,7 +3936,7 @@
             "ddd": 0,
             "ind": 14,
             "ty": 3,
-            "nm": "Control 3",
+            "nm": "Control 2",
             "parent": 13,
             "sr": 1,
             "ks": {
@@ -3953,8 +3953,8 @@
                 "p": {
                     "a": 0,
                     "k": [
-                        15.424,
-                        5.717,
+                        5,
+                        9.211,
                         0
                     ],
                     "ix": 2,
@@ -4026,10 +4026,10 @@
         }
     ],
     "markers": [
-        {
+       {
       "tm": 0,
       "cm": "play",
-      "dr": 670
+      "dr": 500
     },
     {
       "tm": 100,
@@ -4037,9 +4037,9 @@
       "dr": 500
     },
     {
-      "tm": 700,
+      "tm": 600,
       "cm": "stop",
-      "dr": 10
+      "dr": 100
     }
     ],
     "props": {}
