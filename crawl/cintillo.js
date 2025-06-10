@@ -1,6 +1,5 @@
 const ticker = document.getElementById('tickerText');
 const container = document.querySelector('.ticker-container');
-const scrollSpeed = 100; // pixels per second
 // Use either a symbol or an image as the separator
 const separator = `<span style="margin: 0 20px;">|</span>`;
 // OR for an image:
@@ -14,7 +13,7 @@ const messages = [
 ];
 
 
-function startTicker(messagesArray) {
+function startTicker(messagesArray, scrollSpeed) {
   if (!Array.isArray(messagesArray) || messagesArray.length === 0) {
     console.warn("startTicker: messagesArray must be a non-empty array.");
     return;
@@ -40,11 +39,11 @@ function startTicker(messagesArray) {
   });
 }
 
-function updateTickerMessages(newMessages) {
+function updateTickerMessages(newMessages, scrollSpeed) {
   if (Array.isArray(newMessages) && newMessages.length > 0) {
     hideTicker();
     setTimeout(() => {
-       startTicker(newMessages); // Restart with updated messages
+       startTicker(newMessages, scrollSpeed); // Restart with updated messages
     }, 1000);
   } else {
     console.warn("updateTickerMessages: input must be a non-empty array.");

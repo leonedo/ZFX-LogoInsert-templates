@@ -17,7 +17,7 @@ let loopExternal = false;
 let loopRepeat;
 let loopDuration;
 let loopTiming;
-
+let scrollSpeed = 100;
 
 //update
 let updateAnimation = false;
@@ -214,7 +214,10 @@ webcg.on('data', function (data) {
 
             setTimeout(() => {
                 messagesArray = data["mensajes"]
-                updateTickerMessages(messagesArray)
+                 if (data["speed"]) {
+                    scrollSpeed = data["speed"];
+                }
+                updateTickerMessages(messagesArray,scrollSpeed)
 
             }, updateTiming);
 
